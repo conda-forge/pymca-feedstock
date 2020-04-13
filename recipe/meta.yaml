@@ -1,17 +1,17 @@
 {% set name = "PyMca5" %}
-{% set version = "5.5.4" %}
+{% set version = "5.5.5" %}
 
 package:
   name: pymca
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: adcb0c470f7dc00141a7edd73fcf7adf26f35d8e0ed1f4fb015bd7bbad096b2c
+  sha256: 56f463b78e7577345fe1d0e25e0903a403b53bd248a828853d4b89f20424fb7b
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   build:
