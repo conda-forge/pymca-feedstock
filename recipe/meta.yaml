@@ -10,13 +10,12 @@ source:
   sha256: eddd69e44ea996a58f335a3da99a3942714ba67484ce7b204a6ca4c16bbdbbed
 
 build:
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
   host:
     - fisx >=1.1.6
     - h5py
@@ -24,7 +23,6 @@ requirements:
     - pip
     - python
     - cython
-    - libglu  # [linux]
   run:
     - fisx >=1.1.6
     - h5py
