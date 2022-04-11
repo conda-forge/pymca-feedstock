@@ -19,7 +19,7 @@ requirements:
   host:
     - fisx >=1.1.6
     - h5py
-    - matplotlib > 1.0
+    - matplotlib-base >1.0
     - numpy
     - pip
     - python
@@ -27,7 +27,7 @@ requirements:
   run:
     - fisx >=1.1.6
     - h5py
-    - matplotlib > 1.0
+    - matplotlib-base >1.0
     - numpy
     - python
 
