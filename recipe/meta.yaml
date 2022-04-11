@@ -33,6 +33,10 @@ requirements:
 test:
   imports:
     - PyMca5
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://pymca.sourceforge.net
