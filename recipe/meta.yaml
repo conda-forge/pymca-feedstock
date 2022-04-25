@@ -10,7 +10,7 @@ source:
   sha256: 3961d8161b5fbb50f06fc06df8b13b33470888be574127dd99e730d96272d28d
 
 build:
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
@@ -26,12 +26,17 @@ requirements:
   run:
     - fisx >=1.1.6
     - h5py
-    - numpy
+    - matplotlib-base >1.0
+    - {{ pin_compatible('numpy') }}
     - python
 
 test:
   imports:
     - PyMca5
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://pymca.sourceforge.net
