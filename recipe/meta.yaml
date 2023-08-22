@@ -1,5 +1,5 @@
 {% set name = "PyMca5" %}
-{% set version = "5.8.9" %}
+{% set version = "5.9.0" %}
 
 package:
   name: pymca
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a406848cb2c1418f5f155f28b801e21163d9d80c8e100a12b1a5619c2c7aab82
+  sha256: dc6977b43e1bf3e436d797be3cce3e78112cec8d81f3185efe52962b00bfd079
 
 build:
   number: 0
