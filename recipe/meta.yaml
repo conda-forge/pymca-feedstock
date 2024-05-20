@@ -10,7 +10,7 @@ source:
   sha256: 13576fd221a38cc623258892e9295ddf1297143ac37e7c68ad6e6ceae487cd28
 
 build:
-  number: 0
+  number: 1
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
@@ -32,7 +32,6 @@ requirements:
     - fisx >=1.1.6
     - h5py
     - matplotlib-base >1.0
-    - {{ pin_compatible('numpy') }}
     - python
 
 test:
