@@ -10,7 +10,7 @@ source:
   sha256: 0d4bcaad9352f26eef64ab6890c339fd2e3e9f382a2339518ffe245994bf79c6
 
 build:
-  number: 1
+  number: 2
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
@@ -28,6 +28,7 @@ requirements:
     - pip
     - python
     - cython
+    - setuptools
   run:
     - fisx >=1.1.6
     - h5py
