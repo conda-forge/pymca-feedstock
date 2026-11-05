@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  version: "5.9.7"
+
+package:
+  name: pymca
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/p/pymca5/pymca5-${{ version }}.tar.gz
+  sha256: a7de9ec86df93cde6aac931521208c5493df04eacf6f9364248b52879707eaa4
+
+build:
+  number: 1
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython
+        - numpy
+    - ${{ stdlib('c') }}
+    - ${{ compiler('c') }}
+  host:
+    - fisx >=1.1.6
+    - h5py
+    - numpy
+    - pip
+    - python
+    - cython
+    - setuptools
+  run:
+    - fisx >=1.1.6
+    - h5py
+    - matplotlib-base >3.5
+    - python
+
+tests:
+  - python:
+      imports:
+        - PyMca5
+      pip_check: true
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Mapping and X-Ray Fluorescence Analysis
+  homepage: http://pymca.sourceforge.net
+  repository: https://github.com/silx-kit/pymca
+  documentation: http://www.silx.org/doc/PyMca/latest/tutorials.html
+
+extra:
+  recipe-maintainers:
+    - sergey-yaroslavtsev
+    - woutdenolf
+    - tschoonj
